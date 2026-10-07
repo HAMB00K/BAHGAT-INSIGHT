@@ -53,8 +53,10 @@
   async function loadTable() {
     var alerts = await getJSON("/api/anomalies" + (severity ? "?severity=" + severity : ""));
     var rows = alerts.slice(0, 40).map(function (a) {
+      var fmtVal = a.metric === "store_orders"
+        ? function (v) { return fmtInt(Math.round(v)) + " orders"; } : fmtMoney;
       var vsExp = (a.expected && a.value !== null)
-        ? "<div class='sub'>" + fmtMoney(a.value) + " vs " + fmtMoney(a.expected) + " expected</div>" : "";
+        ? "<div class='sub'>" + fmtVal(a.value) + " vs " + fmtVal(a.expected) + " expected</div>" : "";
       return "<tr><td>" + a.date_key + "<div class='sub'>" + a.store_name + "</div></td>" +
         "<td>" + severityBadge(a.severity) + "</td>" +
         "<td class='sub'>" + a.method + "</td>" +
@@ -78,11 +80,12 @@
       '<div class="kpi-value">' + detected + " / " + val.length + "</div>" +
       '<span class="card-note">event-level recall of the two detectors combined</span></div>';
 
-    var alerts = await getJSON("/api/anomalies");
+    // /api/anomalies is capped at 300 rows for the table - count over the full history instead
+    var all = await getJSON("/api/anomaly_series?days=1200");
     kpiHtml +=
       '<div class="card"><div class="kpi-label">Total alerts raised</div>' +
-      '<div class="kpi-value">' + alerts.length + "</div>" +
-      '<span class="card-note">across ' + days + '+ days of history</span></div>';
+      '<div class="kpi-value">' + fmtInt(all.anomalies.length) + "</div>" +
+      '<span class="card-note">across ' + fmtInt(all.series.length) + ' days of history</span></div>';
     document.getElementById("anKpis").innerHTML = kpiHtml;
 
     document.getElementById("valTable").innerHTML =

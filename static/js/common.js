@@ -53,6 +53,7 @@ function apexBase(height) {
   return {
     chart: {
       height: height || 300, fontFamily: "inherit", background: "transparent",
+      foreColor: cssVar("--muted"),
       toolbar: { show: false }, zoom: { enabled: false },
       animations: { speed: 450 }
     },
@@ -60,7 +61,6 @@ function apexBase(height) {
             padding: { left: 8, right: 8 } },
     dataLabels: { enabled: false },
     tooltip: { theme: false },
-    foreColor: cssVar("--muted"),
     states: { hover: { filter: { type: "lighten", value: 0.04 } } }
   };
 }
