@@ -1,0 +1,1938 @@
+{
+  "compatibilityLevel": 1600,
+  "model": {
+    "annotations": [
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "0"
+      },
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"DimDate\",\"DimStore\",\"DimProduct\",\"DimCustomer\",\"DimSupplier\",\"FactSales\",\"FactReturns\",\"FactMarketing\",\"FactWebTraffic\",\"FactInventory\",\"MLForecast\",\"MLForecastMetrics\",\"MLAnomalies\",\"MLAnomalyValidation\",\"MLCustomerSegments\",\"MLSegmentProfiles\",\"PipelineDataQuality\",\"PipelineRuns\",\"_Measures\",\"DataFolder\"]"
+      },
+      {
+        "name": "PBI_ProTooling",
+        "value": "[\"DevMode\"]"
+      }
+    ],
+    "culture": "en-US",
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "expressions": [
+      {
+        "name": "DataFolder",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Text"
+          }
+        ],
+        "expression": "\"C:\\Users\\BENSAID\\Desktop\\Internship project\\powerbi\\data\\\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]",
+        "kind": "m",
+        "lineageTag": "a501372b-d30d-4fcb-a6d7-74a1957ec819"
+      }
+    ],
+    "relationships": [
+      {
+        "name": "r01",
+        "fromColumn": "date_key",
+        "fromTable": "FactSales",
+        "toColumn": "date_key",
+        "toTable": "DimDate"
+      },
+      {
+        "name": "r02",
+        "fromColumn": "store_id",
+        "fromTable": "FactSales",
+        "toColumn": "store_id",
+        "toTable": "DimStore"
+      },
+      {
+        "name": "r03",
+        "fromColumn": "product_id",
+        "fromTable": "FactSales",
+        "toColumn": "product_id",
+        "toTable": "DimProduct"
+      },
+      {
+        "name": "r04",
+        "fromColumn": "customer_id",
+        "fromTable": "FactSales",
+        "toColumn": "customer_id",
+        "toTable": "DimCustomer"
+      },
+      {
+        "name": "r05",
+        "fromColumn": "date_key",
+        "fromTable": "FactReturns",
+        "toColumn": "date_key",
+        "toTable": "DimDate"
+      },
+      {
+        "name": "r06",
+        "fromColumn": "store_id",
+        "fromTable": "FactReturns",
+        "toColumn": "store_id",
+        "toTable": "DimStore"
+      },
+      {
+        "name": "r07",
+        "fromColumn": "product_id",
+        "fromTable": "FactReturns",
+        "toColumn": "product_id",
+        "toTable": "DimProduct"
+      },
+      {
+        "name": "r08",
+        "fromColumn": "date",
+        "fromTable": "FactMarketing",
+        "toColumn": "date_key",
+        "toTable": "DimDate"
+      },
+      {
+        "name": "r09",
+        "fromColumn": "date",
+        "fromTable": "FactWebTraffic",
+        "toColumn": "date_key",
+        "toTable": "DimDate"
+      },
+      {
+        "name": "r10",
+        "fromColumn": "store_id",
+        "fromTable": "FactInventory",
+        "toColumn": "store_id",
+        "toTable": "DimStore"
+      },
+      {
+        "name": "r11",
+        "fromColumn": "product_id",
+        "fromTable": "FactInventory",
+        "toColumn": "product_id",
+        "toTable": "DimProduct"
+      },
+      {
+        "name": "r12",
+        "fromColumn": "date_key",
+        "fromTable": "MLForecast",
+        "toColumn": "date_key",
+        "toTable": "DimDate"
+      },
+      {
+        "name": "r13",
+        "fromColumn": "date_key",
+        "fromTable": "MLAnomalies",
+        "toColumn": "date_key",
+        "toTable": "DimDate"
+      },
+      {
+        "name": "r14",
+        "fromColumn": "store_id",
+        "fromTable": "MLAnomalies",
+        "toColumn": "store_id",
+        "toTable": "DimStore"
+      },
+      {
+        "name": "r15",
+        "fromColumn": "customer_id",
+        "fromTable": "MLCustomerSegments",
+        "toColumn": "customer_id",
+        "toTable": "DimCustomer"
+      },
+      {
+        "name": "r16",
+        "fromColumn": "supplier_id",
+        "fromTable": "DimProduct",
+        "toColumn": "supplier_id",
+        "toTable": "DimSupplier"
+      }
+    ],
+    "sourceQueryCulture": "en-US",
+    "tables": [
+      {
+        "name": "DimDate",
+        "columns": [
+          {
+            "name": "date_key",
+            "dataType": "string",
+            "lineageTag": "5bb8b8a2-f950-4b21-9fb0-1b5de552e870",
+            "sourceColumn": "date_key",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "date",
+            "annotations": [
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "yyyy-mm-dd",
+            "isKey": true,
+            "lineageTag": "eb2b28eb-c5e7-4649-8c79-466901c84a22",
+            "sourceColumn": "date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "year",
+            "dataType": "int64",
+            "lineageTag": "36518a8e-f9e7-4c2b-9e29-480a14bb0379",
+            "sourceColumn": "year",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "month",
+            "dataType": "int64",
+            "lineageTag": "19f780b5-addb-4f5e-bb08-927bc7e951c5",
+            "sourceColumn": "month",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "month_name",
+            "dataType": "string",
+            "lineageTag": "00555190-0b4b-4545-bc0b-10ee6ceab3fd",
+            "sortByColumn": "month",
+            "sourceColumn": "month_name",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "year_month",
+            "dataType": "string",
+            "lineageTag": "e6b27d54-3ac5-4696-83c8-3fdd9fcd298b",
+            "sourceColumn": "year_month",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "quarter",
+            "dataType": "string",
+            "lineageTag": "d03ed02b-b2a0-4a0f-8b70-463de5514d96",
+            "sourceColumn": "quarter",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "day_of_week",
+            "dataType": "int64",
+            "lineageTag": "6852169c-e904-4756-83dc-77b5ee6b3c84",
+            "sourceColumn": "day_of_week",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "day_name",
+            "dataType": "string",
+            "lineageTag": "5d0c9898-2fbd-4093-b20c-54571b9961d8",
+            "sortByColumn": "day_of_week",
+            "sourceColumn": "day_name",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "is_weekend",
+            "dataType": "int64",
+            "lineageTag": "94cb070b-6619-4a4b-badd-f488115df0db",
+            "sourceColumn": "is_weekend",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "is_ramadan",
+            "dataType": "int64",
+            "lineageTag": "e6cefc9e-35cf-4270-a4f9-6370a365a52e",
+            "sourceColumn": "is_ramadan",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "is_eid",
+            "dataType": "int64",
+            "lineageTag": "bd6bcd41-8e18-4976-8cf3-fe32545daf26",
+            "sourceColumn": "is_eid",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "retail_event",
+            "dataType": "string",
+            "lineageTag": "487d4ad9-d229-4660-bf8a-35fcf10f213f",
+            "sourceColumn": "retail_event",
+            "summarizeBy": "none"
+          }
+        ],
+        "dataCategory": "Time",
+        "lineageTag": "8ddc1111-708f-4935-a86b-3268f787b520",
+        "partitions": [
+          {
+            "name": "DimDate-part",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(DataFolder & \"DimDate.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    Typed = Table.TransformColumnTypes(Headers, {{\"date\", type date}, {\"year\", Int64.Type}, {\"month\", Int64.Type}, {\"day_of_week\", Int64.Type}, {\"is_weekend\", Int64.Type}, {\"is_ramadan\", Int64.Type}, {\"is_eid\", Int64.Type}})",
+                "in",
+                "    Typed"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "DimStore",
+        "columns": [
+          {
+            "name": "store_id",
+            "dataType": "string",
+            "lineageTag": "06f2abfd-7b16-489c-8072-47b7bf1d657e",
+            "sourceColumn": "store_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "store_name",
+            "dataType": "string",
+            "lineageTag": "896a3e74-7203-4f94-a94f-eda406bd313c",
+            "sourceColumn": "store_name",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "city",
+            "dataType": "string",
+            "lineageTag": "afccb67d-38d4-486b-8a6e-1667f5683c89",
+            "sourceColumn": "city",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "country",
+            "dataType": "string",
+            "lineageTag": "7f75fb58-6349-469c-86e1-6ec941354bd1",
+            "sourceColumn": "country",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "store_type",
+            "dataType": "string",
+            "lineageTag": "30587497-ec8a-4d32-8396-63dfb6b82638",
+            "sourceColumn": "store_type",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "sqm",
+            "dataType": "int64",
+            "lineageTag": "5ffeead6-8fa8-42d5-90ce-096e3e6f7a40",
+            "sourceColumn": "sqm",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "opened_date",
+            "annotations": [
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "yyyy-mm-dd",
+            "lineageTag": "9004412f-ed5d-422a-85d5-207acb72b58b",
+            "sourceColumn": "opened_date",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "be5b30f6-442d-4487-9926-727b4776b4e8",
+        "partitions": [
+          {
+            "name": "DimStore-part",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(DataFolder & \"DimStore.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    Typed = Table.TransformColumnTypes(Headers, {{\"sqm\", Int64.Type}, {\"opened_date\", type date}})",
+                "in",
+                "    Typed"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "DimProduct",
+        "columns": [
+          {
+            "name": "product_id",
+            "dataType": "string",
+            "lineageTag": "936ea77b-cc34-4b34-a985-0ee66cb577c7",
+            "sourceColumn": "product_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "product_name",
+            "dataType": "string",
+            "lineageTag": "1e2b4a93-1541-4401-bb00-f106c2e60f38",
+            "sourceColumn": "product_name",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "category",
+            "dataType": "string",
+            "lineageTag": "e0aff212-e727-431f-ae08-d78c6ae7b7e1",
+            "sourceColumn": "category",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "subcategory",
+            "dataType": "string",
+            "lineageTag": "b74a1489-ce1a-4ddc-9e0e-29d482baa605",
+            "sourceColumn": "subcategory",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "brand",
+            "dataType": "string",
+            "lineageTag": "66bab33e-182e-4362-b17b-ae6bd4b00c7f",
+            "sourceColumn": "brand",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "unit_price",
+            "dataType": "double",
+            "lineageTag": "6497f1e0-f570-4159-b6af-29bed9a71321",
+            "sourceColumn": "unit_price",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "unit_cost",
+            "dataType": "double",
+            "lineageTag": "2e29884a-6533-42f3-9968-5b9cd0277cb8",
+            "sourceColumn": "unit_cost",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "launch_date",
+            "annotations": [
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "yyyy-mm-dd",
+            "lineageTag": "7092a620-4bd8-4485-8409-8a1de9d42727",
+            "sourceColumn": "launch_date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "supplier_id",
+            "dataType": "string",
+            "lineageTag": "25bd5d13-ee54-4f4d-a922-9d4539015238",
+            "sourceColumn": "supplier_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "margin_pct",
+            "dataType": "double",
+            "lineageTag": "58338efa-924f-4469-a10d-bb723ff0c904",
+            "sourceColumn": "margin_pct",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "895f6ac2-ad2d-4618-9ccd-aba5e9a80906",
+        "partitions": [
+          {
+            "name": "DimProduct-part",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(DataFolder & \"DimProduct.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    Typed = Table.TransformColumnTypes(Headers, {{\"unit_price\", type number}, {\"unit_cost\", type number}, {\"margin_pct\", type number}, {\"launch_date\", type date}})",
+                "in",
+                "    Typed"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "DimCustomer",
+        "columns": [
+          {
+            "name": "customer_id",
+            "dataType": "string",
+            "lineageTag": "44410882-402b-46b3-a4c6-c90a1339f9c2",
+            "sourceColumn": "customer_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "first_name",
+            "dataType": "string",
+            "lineageTag": "aaae8a1a-d2c3-485e-b39a-5e5df5ce2f2e",
+            "sourceColumn": "first_name",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "last_name",
+            "dataType": "string",
+            "lineageTag": "b3a1574d-0599-4bfe-8408-edbb1b0760c4",
+            "sourceColumn": "last_name",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "gender",
+            "dataType": "string",
+            "lineageTag": "93798313-7eb0-4020-b19a-3edfb06e96b5",
+            "sourceColumn": "gender",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "birth_year",
+            "dataType": "int64",
+            "lineageTag": "acd4501d-bcea-462d-be99-31710db6aedd",
+            "sourceColumn": "birth_year",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "city",
+            "dataType": "string",
+            "lineageTag": "e6410fd3-7cdc-4032-b1d5-4c0901efbb7b",
+            "sourceColumn": "city",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "join_date",
+            "annotations": [
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "yyyy-mm-dd",
+            "lineageTag": "50a001a1-3bd5-4d7a-a2a1-39dd47343ddc",
+            "sourceColumn": "join_date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "email",
+            "dataType": "string",
+            "lineageTag": "0655637c-0b1c-44a8-83ff-b9c9dd8d7362",
+            "sourceColumn": "email",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "age_band",
+            "dataType": "string",
+            "lineageTag": "c4acbef6-c101-4ff2-98b9-497286880f2d",
+            "sourceColumn": "age_band",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "dup_email_flag",
+            "dataType": "int64",
+            "lineageTag": "f68906f9-a7ef-469d-96b3-08f6077e1375",
+            "sourceColumn": "dup_email_flag",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "07f19514-c484-4fdb-8612-bf34200ffe0e",
+        "partitions": [
+          {
+            "name": "DimCustomer-part",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(DataFolder & \"DimCustomer.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    Typed = Table.TransformColumnTypes(Headers, {{\"birth_year\", Int64.Type}, {\"dup_email_flag\", Int64.Type}, {\"join_date\", type date}})",
+                "in",
+                "    Typed"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "DimSupplier",
+        "columns": [
+          {
+            "name": "supplier_id",
+            "dataType": "string",
+            "lineageTag": "bf6428ea-f347-41b4-8592-cc2989cf0b0a",
+            "sourceColumn": "supplier_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "supplier_name",
+            "dataType": "string",
+            "lineageTag": "1edac9ff-5d5b-445a-9d54-fe753e53bd02",
+            "sourceColumn": "supplier_name",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "country",
+            "dataType": "string",
+            "lineageTag": "abec40b8-b55f-4f15-b223-4ff0ecb87dd7",
+            "sourceColumn": "country",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "lead_time_days",
+            "dataType": "int64",
+            "lineageTag": "a1cc733e-ddf5-4b23-8d07-255bcf54d280",
+            "sourceColumn": "lead_time_days",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "reliability_score",
+            "dataType": "double",
+            "lineageTag": "0607998e-6f6a-4d7a-adcc-190f767a3252",
+            "sourceColumn": "reliability_score",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "21d6920f-884a-451e-91ac-5cc974daed11",
+        "partitions": [
+          {
+            "name": "DimSupplier-part",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(DataFolder & \"DimSupplier.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    Typed = Table.TransformColumnTypes(Headers, {{\"lead_time_days\", Int64.Type}, {\"reliability_score\", type number}})",
+                "in",
+                "    Typed"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "FactSales",
+        "columns": [
+          {
+            "name": "transaction_id",
+            "dataType": "string",
+            "lineageTag": "776100b8-bd61-4be4-826d-ac2316adb0e9",
+            "sourceColumn": "transaction_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "order_id",
+            "dataType": "string",
+            "lineageTag": "ca836028-1be2-4404-8b08-985a6e78b056",
+            "sourceColumn": "order_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "date_key",
+            "dataType": "string",
+            "lineageTag": "4ac67b87-78be-48e7-a631-0d16efb1686c",
+            "sourceColumn": "date_key",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "order_time",
+            "dataType": "string",
+            "lineageTag": "559b7596-26fd-4fea-bbbb-62fcd93e55e1",
+            "sourceColumn": "order_time",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "store_id",
+            "dataType": "string",
+            "lineageTag": "5d7be164-9632-49d0-9e41-e81f72dabc7b",
+            "sourceColumn": "store_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "customer_id",
+            "dataType": "string",
+            "lineageTag": "c709400b-6158-45e9-82c3-a40ba5116cb1",
+            "sourceColumn": "customer_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "product_id",
+            "dataType": "string",
+            "lineageTag": "49957f93-4073-4346-ae1c-1416e72ae82b",
+            "sourceColumn": "product_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "quantity",
+            "dataType": "int64",
+            "lineageTag": "e77c1cc4-414f-485c-a52d-8f843750fab5",
+            "sourceColumn": "quantity",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "unit_price",
+            "dataType": "double",
+            "lineageTag": "8de41b1f-8903-431f-8378-57d39e822b77",
+            "sourceColumn": "unit_price",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "discount_pct",
+            "dataType": "double",
+            "lineageTag": "b6fd19c3-6767-4227-b46b-5c91e8b9ff0f",
+            "sourceColumn": "discount_pct",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "gross_amount",
+            "dataType": "double",
+            "lineageTag": "0f7ed670-bc3b-4136-850c-2798c33e4ebf",
+            "sourceColumn": "gross_amount",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "discount_amount",
+            "dataType": "double",
+            "lineageTag": "3839ef9f-8c75-4dd7-8afe-f473a8d28933",
+            "sourceColumn": "discount_amount",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "net_amount",
+            "dataType": "double",
+            "lineageTag": "0b5be4b0-7af4-4dd5-a395-c6a50b7f13a8",
+            "sourceColumn": "net_amount",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "cost_amount",
+            "dataType": "double",
+            "lineageTag": "7543f5dc-2aff-40ab-b26c-69c345dfbe29",
+            "sourceColumn": "cost_amount",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "margin_amount",
+            "dataType": "double",
+            "lineageTag": "56268371-e282-4afc-8d96-e9b67d61fedf",
+            "sourceColumn": "margin_amount",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "payment_method",
+            "dataType": "string",
+            "lineageTag": "68a07ffb-b5b6-4f7e-bb00-393ef1afedbf",
+            "sourceColumn": "payment_method",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "sales_channel",
+            "dataType": "string",
+            "lineageTag": "fa44de94-c3f6-4a53-ac38-c51edcce8e97",
+            "sourceColumn": "sales_channel",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "38232f41-4309-4f66-aeaf-06dfe8b64090",
+        "partitions": [
+          {
+            "name": "FactSales-part",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(DataFolder & \"FactSales.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    Typed = Table.TransformColumnTypes(Headers, {{\"quantity\", Int64.Type}, {\"unit_price\", type number}, {\"discount_pct\", type number}, {\"gross_amount\", type number}, {\"discount_amount\", type number}, {\"net_amount\", type number}, {\"cost_amount\", type number}, {\"margin_amount\", type number}})",
+                "in",
+                "    Typed"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "FactReturns",
+        "columns": [
+          {
+            "name": "return_id",
+            "dataType": "string",
+            "lineageTag": "0eeab7a6-d54e-423f-aef9-953fe69580f0",
+            "sourceColumn": "return_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "transaction_id",
+            "dataType": "string",
+            "lineageTag": "6887ab87-127d-4d3c-b7d7-832c96ae3461",
+            "sourceColumn": "transaction_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "date_key",
+            "dataType": "string",
+            "lineageTag": "1445f660-3b4d-44e0-ae09-bd6d0d2d64c3",
+            "sourceColumn": "date_key",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "store_id",
+            "dataType": "string",
+            "lineageTag": "40546b74-5472-487a-96ab-00cf2eebf2b0",
+            "sourceColumn": "store_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "product_id",
+            "dataType": "string",
+            "lineageTag": "18ba008a-e523-423c-83b8-a7346bdae5d7",
+            "sourceColumn": "product_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "customer_id",
+            "dataType": "string",
+            "lineageTag": "3cf4c563-8d16-4779-9154-ac917d5253bc",
+            "sourceColumn": "customer_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "qty_returned",
+            "dataType": "int64",
+            "lineageTag": "0e1577ff-04d7-414c-bbda-c94d5a2c0066",
+            "sourceColumn": "qty_returned",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "refund_amount",
+            "dataType": "double",
+            "lineageTag": "4d33e41b-ad1a-457f-95f2-793d4cd6ec5b",
+            "sourceColumn": "refund_amount",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "reason",
+            "dataType": "string",
+            "lineageTag": "fb4fab9f-6a56-4a8f-9730-ac6dfe5567a7",
+            "sourceColumn": "reason",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "6713ccba-2123-404d-b940-43d8751e3d07",
+        "partitions": [
+          {
+            "name": "FactReturns-part",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(DataFolder & \"FactReturns.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    Typed = Table.TransformColumnTypes(Headers, {{\"qty_returned\", Int64.Type}, {\"refund_amount\", type number}})",
+                "in",
+                "    Typed"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "FactMarketing",
+        "columns": [
+          {
+            "name": "date",
+            "dataType": "string",
+            "lineageTag": "60bfdb3f-aa5d-4608-b79d-24092701f850",
+            "sourceColumn": "date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "channel",
+            "dataType": "string",
+            "lineageTag": "8514971d-49a6-4b80-a7be-a4b0f1d85812",
+            "sourceColumn": "channel",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "campaign",
+            "dataType": "string",
+            "lineageTag": "b978cd5f-ae22-473e-8ef2-820c09bc1c4b",
+            "sourceColumn": "campaign",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "spend_aed",
+            "dataType": "double",
+            "lineageTag": "98cc7b83-bb95-4e54-a50e-d0e70fcc6630",
+            "sourceColumn": "spend_aed",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "impressions",
+            "dataType": "int64",
+            "lineageTag": "7a63f56f-411b-4836-a51c-7b44ce0c4163",
+            "sourceColumn": "impressions",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "clicks",
+            "dataType": "int64",
+            "lineageTag": "10a1df5d-e704-4bac-aa0d-fcab904e6b3e",
+            "sourceColumn": "clicks",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "66945850-0980-4174-9925-443306971a96",
+        "partitions": [
+          {
+            "name": "FactMarketing-part",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(DataFolder & \"FactMarketing.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    Typed = Table.TransformColumnTypes(Headers, {{\"spend_aed\", type number}, {\"impressions\", Int64.Type}, {\"clicks\", Int64.Type}})",
+                "in",
+                "    Typed"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "FactWebTraffic",
+        "columns": [
+          {
+            "name": "date",
+            "dataType": "string",
+            "lineageTag": "a644f422-651c-4297-bbf9-865defa683a5",
+            "sourceColumn": "date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "sessions",
+            "dataType": "int64",
+            "lineageTag": "f97a5da6-f3ca-4476-a352-d8ccd69f59d3",
+            "sourceColumn": "sessions",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "unique_visitors",
+            "dataType": "int64",
+            "lineageTag": "59c4e32a-178a-4304-b71f-40d9e98a88c3",
+            "sourceColumn": "unique_visitors",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "new_visitor_pct",
+            "dataType": "double",
+            "lineageTag": "1b5aa2b4-fe3b-44c3-bb04-4eb6c8bc3f69",
+            "sourceColumn": "new_visitor_pct",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "bounce_rate",
+            "dataType": "double",
+            "lineageTag": "96f66e2d-7a34-4b6f-8938-644621508b91",
+            "sourceColumn": "bounce_rate",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "avg_session_sec",
+            "dataType": "int64",
+            "lineageTag": "02690883-d2ff-4693-94d3-f53c3458fe2b",
+            "sourceColumn": "avg_session_sec",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "online_orders",
+            "dataType": "int64",
+            "lineageTag": "e9733747-b415-40cf-b610-4b195f5ab630",
+            "sourceColumn": "online_orders",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "conversion_rate",
+            "dataType": "double",
+            "lineageTag": "79c8be35-3c77-4bc9-8dc0-cc6bef0d752d",
+            "sourceColumn": "conversion_rate",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "44be1016-9b77-4ac0-b507-967b97378a6a",
+        "partitions": [
+          {
+            "name": "FactWebTraffic-part",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(DataFolder & \"FactWebTraffic.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    Typed = Table.TransformColumnTypes(Headers, {{\"sessions\", Int64.Type}, {\"unique_visitors\", Int64.Type}, {\"new_visitor_pct\", type number}, {\"bounce_rate\", type number}, {\"avg_session_sec\", Int64.Type}, {\"online_orders\", Int64.Type}, {\"conversion_rate\", type number}})",
+                "in",
+                "    Typed"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "FactInventory",
+        "columns": [
+          {
+            "name": "snapshot_month",
+            "dataType": "string",
+            "lineageTag": "d2425394-153b-458e-a13c-94e34b048888",
+            "sourceColumn": "snapshot_month",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "store_id",
+            "dataType": "string",
+            "lineageTag": "41986ad9-abf3-425c-965c-f702d3f351cc",
+            "sourceColumn": "store_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "product_id",
+            "dataType": "string",
+            "lineageTag": "3ac38f46-a4e5-4cb6-908d-90eaa464fd98",
+            "sourceColumn": "product_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "units_sold_month",
+            "dataType": "int64",
+            "lineageTag": "3e7a7048-b7bd-4172-bee3-88e6a1d4c961",
+            "sourceColumn": "units_sold_month",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "units_on_hand",
+            "dataType": "int64",
+            "lineageTag": "86605d27-9ffb-4f7c-b414-74b72fea2466",
+            "sourceColumn": "units_on_hand",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "stockout_days",
+            "dataType": "int64",
+            "lineageTag": "60d3ada3-1a4b-4baf-8bed-07b6395e9a50",
+            "sourceColumn": "stockout_days",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "9884dd28-e412-4e0e-a148-dc689a343e0f",
+        "partitions": [
+          {
+            "name": "FactInventory-part",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(DataFolder & \"FactInventory.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    Typed = Table.TransformColumnTypes(Headers, {{\"units_sold_month\", Int64.Type}, {\"units_on_hand\", Int64.Type}, {\"stockout_days\", Int64.Type}})",
+                "in",
+                "    Typed"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "MLForecast",
+        "columns": [
+          {
+            "name": "date_key",
+            "dataType": "string",
+            "lineageTag": "cd08bc88-2c63-47f5-9d54-ffefa169438b",
+            "sourceColumn": "date_key",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "scope",
+            "dataType": "string",
+            "lineageTag": "9fa8f119-54b1-4d74-bb10-047737188acb",
+            "sourceColumn": "scope",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "actual",
+            "dataType": "double",
+            "lineageTag": "09125ae6-b9cc-4b45-a51d-d772c25407f7",
+            "sourceColumn": "actual",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "forecast",
+            "dataType": "double",
+            "lineageTag": "288c7d37-c8af-4b9a-94b1-d53dfbb848c6",
+            "sourceColumn": "forecast",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "lo",
+            "dataType": "double",
+            "lineageTag": "bb5f4ca2-a660-43cb-9d37-54b7f184774f",
+            "sourceColumn": "lo",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "hi",
+            "dataType": "double",
+            "lineageTag": "d0bbeac4-c8c6-48c5-87f7-78b868fa3261",
+            "sourceColumn": "hi",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "model",
+            "dataType": "string",
+            "lineageTag": "2f9abf14-07e7-4c70-8f17-f9b3a1367fd8",
+            "sourceColumn": "model",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "kind",
+            "dataType": "string",
+            "lineageTag": "3ed2d6ed-ef79-4d21-af5d-c30b7c83f51e",
+            "sourceColumn": "kind",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "b7b5bd58-6b3f-455b-a0d8-fc9843d2bc8f",
+        "partitions": [
+          {
+            "name": "MLForecast-part",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(DataFolder & \"MLForecast.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    Typed = Table.TransformColumnTypes(Headers, {{\"actual\", type number}, {\"forecast\", type number}, {\"lo\", type number}, {\"hi\", type number}})",
+                "in",
+                "    Typed"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "MLForecastMetrics",
+        "columns": [
+          {
+            "name": "model",
+            "dataType": "string",
+            "lineageTag": "e2cbe328-11d6-44c9-904a-67a0d1d8c025",
+            "sourceColumn": "model",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "scope",
+            "dataType": "string",
+            "lineageTag": "e2227d29-0f80-48d1-bd62-8480c9a3849d",
+            "sourceColumn": "scope",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "mape",
+            "dataType": "double",
+            "lineageTag": "bd257f20-48b6-48fc-a354-0ec7952dfcf9",
+            "sourceColumn": "mape",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "rmse",
+            "dataType": "double",
+            "lineageTag": "cdf2783d-ec62-49f6-a074-20bec6b8e854",
+            "sourceColumn": "rmse",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "is_champion",
+            "dataType": "int64",
+            "lineageTag": "d8fb27fe-32ef-4bbc-96d0-df6016410bf4",
+            "sourceColumn": "is_champion",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "4c8e78f0-6a22-4e8d-ac4b-1716d9736141",
+        "partitions": [
+          {
+            "name": "MLForecastMetrics-part",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(DataFolder & \"MLForecastMetrics.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    Typed = Table.TransformColumnTypes(Headers, {{\"mape\", type number}, {\"rmse\", type number}, {\"is_champion\", Int64.Type}})",
+                "in",
+                "    Typed"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "MLAnomalies",
+        "columns": [
+          {
+            "name": "anomaly_id",
+            "dataType": "string",
+            "lineageTag": "9b1bb3aa-4e70-4774-9199-4f1e1c65f10c",
+            "sourceColumn": "anomaly_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "date_key",
+            "dataType": "string",
+            "lineageTag": "52b7c0fc-cedf-4ef6-b0d9-2bd355a4a297",
+            "sourceColumn": "date_key",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "store_id",
+            "dataType": "string",
+            "lineageTag": "e44db7e5-d7eb-4696-8011-fb5ed9d1f625",
+            "sourceColumn": "store_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "metric",
+            "dataType": "string",
+            "lineageTag": "4e739365-d7ef-4b70-98d2-3fc676f7698c",
+            "sourceColumn": "metric",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "method",
+            "dataType": "string",
+            "lineageTag": "9844f7ed-108a-43dd-a833-40504091c0b1",
+            "sourceColumn": "method",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "value",
+            "dataType": "double",
+            "lineageTag": "f4d16891-4ee6-41d9-9f3c-01e94cdf19aa",
+            "sourceColumn": "value",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "expected",
+            "dataType": "double",
+            "lineageTag": "3e05ad84-d176-4caf-95b2-dae6c05990f3",
+            "sourceColumn": "expected",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "score",
+            "dataType": "double",
+            "lineageTag": "3328f7c0-708a-45f1-9a16-e6131bde5e92",
+            "sourceColumn": "score",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "severity",
+            "dataType": "string",
+            "lineageTag": "bb7e3133-3461-40cd-8d86-ba701894f13c",
+            "sourceColumn": "severity",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "description",
+            "dataType": "string",
+            "lineageTag": "967766e2-d33d-4292-b7f1-d1a303ad34a9",
+            "sourceColumn": "description",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "df262fb1-632d-4b54-848e-d90aa47e0521",
+        "partitions": [
+          {
+            "name": "MLAnomalies-part",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(DataFolder & \"MLAnomalies.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    Typed = Table.TransformColumnTypes(Headers, {{\"value\", type number}, {\"expected\", type number}, {\"score\", type number}})",
+                "in",
+                "    Typed"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "MLAnomalyValidation",
+        "columns": [
+          {
+            "name": "label",
+            "dataType": "string",
+            "lineageTag": "e6292734-1eab-4d56-85a2-4ffeb1d4100f",
+            "sourceColumn": "label",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "start",
+            "dataType": "string",
+            "lineageTag": "0390ddbd-a84c-455a-acb1-2dba081ae010",
+            "sourceColumn": "start",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "end",
+            "dataType": "string",
+            "lineageTag": "fc50dd9d-6c8b-478f-8a29-6ee140639a1d",
+            "sourceColumn": "end",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "stores",
+            "dataType": "string",
+            "lineageTag": "d81a4db7-c437-457c-9c6e-45628ffb3bd7",
+            "sourceColumn": "stores",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "detected",
+            "dataType": "int64",
+            "lineageTag": "8844d020-4700-4582-92e2-0d0e997e1f8c",
+            "sourceColumn": "detected",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "n_alerts",
+            "dataType": "int64",
+            "lineageTag": "d0041756-9145-4e49-9e27-bd1a9121ac9f",
+            "sourceColumn": "n_alerts",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "methods",
+            "dataType": "string",
+            "lineageTag": "4fd45a1b-2d5f-4305-826e-bc905b5251df",
+            "sourceColumn": "methods",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "8e338e68-ae11-47ef-ab67-518d05f9c740",
+        "partitions": [
+          {
+            "name": "MLAnomalyValidation-part",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(DataFolder & \"MLAnomalyValidation.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    Typed = Table.TransformColumnTypes(Headers, {{\"detected\", Int64.Type}, {\"n_alerts\", Int64.Type}})",
+                "in",
+                "    Typed"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "MLCustomerSegments",
+        "columns": [
+          {
+            "name": "customer_id",
+            "dataType": "string",
+            "lineageTag": "1d7a9b7a-a037-4a46-8936-ef148a5cf9fa",
+            "sourceColumn": "customer_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "recency",
+            "dataType": "int64",
+            "lineageTag": "78aec4ff-7098-4349-9d8c-0b457ce2677b",
+            "sourceColumn": "recency",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "frequency",
+            "dataType": "int64",
+            "lineageTag": "49b2a8bd-924d-4dbd-a238-250f6b88017e",
+            "sourceColumn": "frequency",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "monetary",
+            "dataType": "double",
+            "lineageTag": "480ac164-a9dc-40e3-aa43-a497745436a6",
+            "sourceColumn": "monetary",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "first_purchase",
+            "annotations": [
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "yyyy-mm-dd",
+            "lineageTag": "13da2b07-b0a8-44f1-a407-555f7f8fe23f",
+            "sourceColumn": "first_purchase",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "tenure_days",
+            "dataType": "int64",
+            "lineageTag": "9406fb82-c6bc-4720-afe0-62a37ec99276",
+            "sourceColumn": "tenure_days",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "segment",
+            "dataType": "string",
+            "lineageTag": "9eaa8643-efab-4bf4-ba50-929507899016",
+            "sourceColumn": "segment",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "churn_risk",
+            "dataType": "double",
+            "lineageTag": "0c840ecd-6cde-457f-8f5d-af1b1613c8db",
+            "sourceColumn": "churn_risk",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "clv_annual",
+            "dataType": "double",
+            "lineageTag": "0b656f01-651d-4c6a-b49a-2a86614f8f37",
+            "sourceColumn": "clv_annual",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "first_name",
+            "dataType": "string",
+            "lineageTag": "f785794d-96b3-4b91-8afa-73346ff45294",
+            "sourceColumn": "first_name",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "last_name",
+            "dataType": "string",
+            "lineageTag": "93a39eeb-543d-4205-b9fe-0cf6e51237a8",
+            "sourceColumn": "last_name",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "city",
+            "dataType": "string",
+            "lineageTag": "2371958c-a7dd-45c4-9039-5fc61a3628dd",
+            "sourceColumn": "city",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "gender",
+            "dataType": "string",
+            "lineageTag": "809aaa7b-bf92-4b32-8430-4a00073e26bd",
+            "sourceColumn": "gender",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "age_band",
+            "dataType": "string",
+            "lineageTag": "1aef54b2-593e-49d4-9a0c-be69095bed8c",
+            "sourceColumn": "age_band",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "c5a83e25-ea7a-4ea9-94be-0fc2dc11a5c7",
+        "partitions": [
+          {
+            "name": "MLCustomerSegments-part",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(DataFolder & \"MLCustomerSegments.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    Typed = Table.TransformColumnTypes(Headers, {{\"recency\", Int64.Type}, {\"frequency\", Int64.Type}, {\"monetary\", type number}, {\"first_purchase\", type date}, {\"tenure_days\", Int64.Type}, {\"churn_risk\", type number}, {\"clv_annual\", type number}})",
+                "in",
+                "    Typed"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "MLSegmentProfiles",
+        "columns": [
+          {
+            "name": "segment",
+            "dataType": "string",
+            "lineageTag": "281a5bd3-5263-4fb7-9a30-7ea7411f352f",
+            "sourceColumn": "segment",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "customers",
+            "dataType": "int64",
+            "lineageTag": "2c609b2f-2bc7-41ec-9041-4f41ede3f157",
+            "sourceColumn": "customers",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "avg_recency_days",
+            "dataType": "double",
+            "lineageTag": "647f4b5e-df7b-4988-a2ea-913003397ba9",
+            "sourceColumn": "avg_recency_days",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "avg_frequency",
+            "dataType": "double",
+            "lineageTag": "9393afd5-c5e4-4fc0-a313-610cb730ed4a",
+            "sourceColumn": "avg_frequency",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "avg_monetary",
+            "dataType": "double",
+            "lineageTag": "fa78a992-cafd-4842-b57c-22feb065e95b",
+            "sourceColumn": "avg_monetary",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "total_revenue",
+            "dataType": "double",
+            "lineageTag": "83f9cf73-ca09-41f9-8ca1-48efd5a19aeb",
+            "sourceColumn": "total_revenue",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "avg_churn_risk",
+            "dataType": "double",
+            "lineageTag": "c6fa4a6f-4991-462c-a389-7022286be00e",
+            "sourceColumn": "avg_churn_risk",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "avg_clv",
+            "dataType": "double",
+            "lineageTag": "3f9a98a1-1b35-499c-b21f-47ce72ef7908",
+            "sourceColumn": "avg_clv",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "revenue_share_pct",
+            "dataType": "double",
+            "lineageTag": "00d381a0-c45a-4a8e-921e-2f009869ac5e",
+            "sourceColumn": "revenue_share_pct",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "04ea4674-2bab-4362-b8ca-0f1eff797445",
+        "partitions": [
+          {
+            "name": "MLSegmentProfiles-part",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(DataFolder & \"MLSegmentProfiles.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    Typed = Table.TransformColumnTypes(Headers, {{\"customers\", Int64.Type}, {\"avg_recency_days\", type number}, {\"avg_frequency\", type number}, {\"avg_monetary\", type number}, {\"total_revenue\", type number}, {\"avg_churn_risk\", type number}, {\"avg_clv\", type number}, {\"revenue_share_pct\", type number}})",
+                "in",
+                "    Typed"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "PipelineDataQuality",
+        "columns": [
+          {
+            "name": "issue",
+            "dataType": "string",
+            "lineageTag": "6691d9c0-1cc4-4dd7-b912-aa5b3daf48fd",
+            "sourceColumn": "issue",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "rows_affected",
+            "dataType": "int64",
+            "lineageTag": "ca708d38-d4b8-4aa5-bdb4-6f8a52fe271c",
+            "sourceColumn": "rows_affected",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "action",
+            "dataType": "string",
+            "lineageTag": "50464a33-7bed-45b9-8515-b2ec096185ce",
+            "sourceColumn": "action",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "c58e95c1-1894-431c-a13c-eee07c2b757f",
+        "partitions": [
+          {
+            "name": "PipelineDataQuality-part",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(DataFolder & \"PipelineDataQuality.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    Typed = Table.TransformColumnTypes(Headers, {{\"rows_affected\", Int64.Type}})",
+                "in",
+                "    Typed"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "PipelineRuns",
+        "columns": [
+          {
+            "name": "stage",
+            "dataType": "string",
+            "lineageTag": "20b0e8fe-0ca3-4017-b173-6a22b09ee089",
+            "sourceColumn": "stage",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "seconds",
+            "dataType": "double",
+            "lineageTag": "13932b39-782a-4bd8-aa8a-36da2bffd88f",
+            "sourceColumn": "seconds",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "rows_out",
+            "dataType": "int64",
+            "lineageTag": "05bdf4af-889f-4797-b754-468b7d1b00dd",
+            "sourceColumn": "rows_out",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "run_at",
+            "dataType": "string",
+            "lineageTag": "04920960-e13c-4701-90dd-011c064741a7",
+            "sourceColumn": "run_at",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "70775219-b746-4f46-a633-1d62bb3bc113",
+        "partitions": [
+          {
+            "name": "PipelineRuns-part",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(DataFolder & \"PipelineRuns.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    Typed = Table.TransformColumnTypes(Headers, {{\"seconds\", type number}, {\"rows_out\", Int64.Type}})",
+                "in",
+                "    Typed"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "_Measures",
+        "columns": [
+          {
+            "name": "Col",
+            "dataType": "string",
+            "isHidden": true,
+            "lineageTag": "17ffdadc-de18-4c6f-9edf-b1798e95e35c",
+            "sourceColumn": "Col",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "5cc8f0ab-1447-4df3-99e6-925c91ba5144",
+        "measures": [
+          {
+            "name": "Net Revenue",
+            "expression": "SUM ( FactSales[net_amount] )",
+            "formatString": "#,0",
+            "lineageTag": "1dc79998-c317-4edd-9877-6053df7a873e"
+          },
+          {
+            "name": "Gross Revenue",
+            "expression": "SUM ( FactSales[gross_amount] )",
+            "formatString": "#,0",
+            "lineageTag": "54d0f8e9-1366-498b-a431-fda87c426134"
+          },
+          {
+            "name": "Total Discounts",
+            "expression": "SUM ( FactSales[discount_amount] )",
+            "formatString": "#,0",
+            "lineageTag": "ea84e28a-763e-40b7-93e3-57fc33b271cf"
+          },
+          {
+            "name": "Total Cost",
+            "expression": "SUM ( FactSales[cost_amount] )",
+            "formatString": "#,0",
+            "lineageTag": "3553a9e9-2594-43a7-8772-4d605ac012c9"
+          },
+          {
+            "name": "Gross Margin",
+            "expression": "SUM ( FactSales[margin_amount] )",
+            "formatString": "#,0",
+            "lineageTag": "6045b0e8-a15d-4752-98ab-4b432f2cf56f"
+          },
+          {
+            "name": "Margin Rate %",
+            "expression": "DIVIDE ( [Gross Margin], [Net Revenue] )",
+            "formatString": "0.0%",
+            "lineageTag": "f970f10b-c7c7-4f6b-90dd-d99287aa26e4"
+          },
+          {
+            "name": "Orders",
+            "expression": "DISTINCTCOUNT ( FactSales[order_id] )",
+            "formatString": "#,0",
+            "lineageTag": "e349688b-3666-4954-b052-147a9c8b78be"
+          },
+          {
+            "name": "Units Sold",
+            "expression": "SUM ( FactSales[quantity] )",
+            "formatString": "#,0",
+            "lineageTag": "068796de-f7f1-444b-a04a-b21b15ea3af4"
+          },
+          {
+            "name": "Avg Order Value",
+            "expression": "DIVIDE ( [Net Revenue], [Orders] )",
+            "formatString": "#,0.0",
+            "lineageTag": "3d9e6a63-c6fc-425c-817e-0466c3a3cb6d"
+          },
+          {
+            "name": "Discount Rate %",
+            "expression": "DIVIDE ( [Total Discounts], [Gross Revenue] )",
+            "formatString": "0.0%",
+            "lineageTag": "6d66e862-8cfd-4864-9273-a804a0d88778"
+          },
+          {
+            "name": "Active Customers",
+            "expression": "DISTINCTCOUNT ( FactSales[customer_id] )",
+            "formatString": "#,0",
+            "lineageTag": "902e17d5-06e8-4217-8426-412488c00198"
+          },
+          {
+            "name": "Revenue per Customer",
+            "expression": "DIVIDE ( [Net Revenue], [Active Customers] )",
+            "formatString": "#,0.0",
+            "lineageTag": "1234b81b-afb1-4855-884e-cb312dae7219"
+          },
+          {
+            "name": "Refund Amount",
+            "expression": "SUM ( FactReturns[refund_amount] )",
+            "formatString": "#,0",
+            "lineageTag": "cd26825e-825e-4019-8507-b111f7d02139"
+          },
+          {
+            "name": "Units Returned",
+            "expression": "SUM ( FactReturns[qty_returned] )",
+            "formatString": "#,0",
+            "lineageTag": "cf01a46e-f062-4949-88ec-462d8cc92704"
+          },
+          {
+            "name": "Return Rate %",
+            "expression": "DIVIDE ( [Refund Amount], [Net Revenue] )",
+            "formatString": "0.00%",
+            "lineageTag": "5df0dca3-34d0-4b15-9972-eae19d4c81f5"
+          },
+          {
+            "name": "Revenue LY",
+            "expression": "CALCULATE ( [Net Revenue], SAMEPERIODLASTYEAR ( DimDate[date] ) )",
+            "formatString": "#,0",
+            "lineageTag": "78906d9a-31ab-42b9-9625-40ad38a79678"
+          },
+          {
+            "name": "Revenue YoY %",
+            "expression": "DIVIDE ( [Net Revenue] - [Revenue LY], [Revenue LY] )",
+            "formatString": "0.0%",
+            "lineageTag": "a0dbb9f7-3854-42b3-b5f5-7230fd37715d"
+          },
+          {
+            "name": "Revenue MTD",
+            "expression": "TOTALMTD ( [Net Revenue], DimDate[date] )",
+            "formatString": "#,0",
+            "lineageTag": "6faa5aa1-aa2c-4d94-a577-2fea6670ec17"
+          },
+          {
+            "name": "Revenue YTD",
+            "expression": "TOTALYTD ( [Net Revenue], DimDate[date] )",
+            "formatString": "#,0",
+            "lineageTag": "5b408349-a3b6-4ec9-aacc-8e7e76f61f70"
+          },
+          {
+            "name": "Revenue 7d Avg",
+            "expression": [
+              "AVERAGEX (",
+              "    DATESINPERIOD ( DimDate[date], MAX ( DimDate[date] ), -7, DAY ),",
+              "    CALCULATE ( [Net Revenue] )",
+              ")"
+            ],
+            "formatString": "#,0",
+            "lineageTag": "3ffca43e-7b6c-4a83-8130-769237b909ed"
+          },
+          {
+            "name": "Marketing Spend",
+            "expression": "SUM ( FactMarketing[spend_aed] )",
+            "formatString": "#,0",
+            "lineageTag": "897521fe-641c-4698-99ac-3cc25fdb1a2d"
+          },
+          {
+            "name": "Marketing ROI",
+            "expression": "DIVIDE ( [Net Revenue], [Marketing Spend] )",
+            "formatString": "0.0",
+            "lineageTag": "5a4221a3-8b19-426c-9c90-92e33934a3be"
+          },
+          {
+            "name": "Sessions",
+            "expression": "SUM ( FactWebTraffic[sessions] )",
+            "formatString": "#,0",
+            "lineageTag": "67471199-ca6d-40c4-8d62-7aa1aaef764f"
+          },
+          {
+            "name": "Online Orders",
+            "expression": "SUM ( FactWebTraffic[online_orders] )",
+            "formatString": "#,0",
+            "lineageTag": "d6376593-55fc-4fd7-acc6-3abdcf29fada"
+          },
+          {
+            "name": "Conversion Rate %",
+            "expression": "DIVIDE ( [Online Orders], [Sessions] )",
+            "formatString": "0.00%",
+            "lineageTag": "a088e31f-f8d3-44c2-91e8-2723813d5146"
+          },
+          {
+            "name": "Actual (Forecast Table)",
+            "expression": "CALCULATE ( SUM ( MLForecast[actual] ), MLForecast[scope] = \"company\" )",
+            "formatString": "#,0",
+            "lineageTag": "0315f624-1ec8-4347-9889-d862aff1fb3e"
+          },
+          {
+            "name": "Forecast Revenue",
+            "expression": "CALCULATE ( SUM ( MLForecast[forecast] ), MLForecast[scope] = \"company\" )",
+            "formatString": "#,0",
+            "lineageTag": "128bc2c7-2811-449b-bd6e-1b53c09dd6a1"
+          },
+          {
+            "name": "Forecast Lower",
+            "expression": "CALCULATE ( SUM ( MLForecast[lo] ), MLForecast[scope] = \"company\" )",
+            "formatString": "#,0",
+            "lineageTag": "b743b32e-17f4-49a3-bd1f-cb5ce5422460"
+          },
+          {
+            "name": "Forecast Upper",
+            "expression": "CALCULATE ( SUM ( MLForecast[hi] ), MLForecast[scope] = \"company\" )",
+            "formatString": "#,0",
+            "lineageTag": "ff226a4c-df55-4b75-844f-17e674f529a6"
+          },
+          {
+            "name": "Forecast Next 30d",
+            "expression": [
+              "VAR fc =",
+              "    FILTER (",
+              "        ALL ( MLForecast ),",
+              "        MLForecast[scope] = \"company\" && MLForecast[kind] = \"forecast\"",
+              "    )",
+              "VAR top30 = TOPN ( 30, fc, MLForecast[date_key], ASC )",
+              "RETURN",
+              "    SUMX ( top30, MLForecast[forecast] )"
+            ],
+            "formatString": "#,0",
+            "lineageTag": "d1f0c36b-78ea-4732-a438-91129c0c90e1"
+          },
+          {
+            "name": "Anomaly Count",
+            "expression": "COUNTROWS ( MLAnomalies )",
+            "formatString": "#,0",
+            "lineageTag": "1176265a-d1fe-4c0d-87a3-8e39004bb7a3"
+          },
+          {
+            "name": "Critical Anomalies",
+            "expression": "CALCULATE ( COUNTROWS ( MLAnomalies ), MLAnomalies[severity] = \"Critical\" )",
+            "formatString": "#,0",
+            "lineageTag": "75797928-43ac-40a8-9b2f-55f376af4dbe"
+          },
+          {
+            "name": "Detection Recall %",
+            "expression": [
+              "DIVIDE (",
+              "    CALCULATE ( COUNTROWS ( MLAnomalyValidation ), MLAnomalyValidation[detected] = 1 ),",
+              "    COUNTROWS ( ALL ( MLAnomalyValidation ) )",
+              ")"
+            ],
+            "formatString": "0%",
+            "lineageTag": "cf008fb8-d96d-4d61-8624-381858cb81ff"
+          },
+          {
+            "name": "Avg Churn Risk",
+            "expression": "AVERAGE ( MLCustomerSegments[churn_risk] )",
+            "formatString": "0.0%",
+            "lineageTag": "606eb3e0-69e6-44c8-848b-adeb1fb5bc45"
+          },
+          {
+            "name": "High Risk Customers",
+            "expression": "CALCULATE ( COUNTROWS ( MLCustomerSegments ), MLCustomerSegments[churn_risk] >= 0.5 )",
+            "formatString": "#,0",
+            "lineageTag": "351120f2-c89e-4ea6-95eb-e31f4fadc2c6"
+          },
+          {
+            "name": "Avg CLV",
+            "expression": "AVERAGE ( MLCustomerSegments[clv_annual] )",
+            "formatString": "#,0",
+            "lineageTag": "93069250-49ca-41b2-a939-40363235b8c4"
+          },
+          {
+            "name": "Segment Revenue",
+            "expression": "SUM ( MLCustomerSegments[monetary] )",
+            "formatString": "#,0",
+            "lineageTag": "ea6a0ccd-ae93-48b9-adcd-7218fd70d719"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "_Measures-part",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = #table({\"Col\"}, {})",
+                "in",
+                "    Source"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

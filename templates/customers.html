@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="grid grid-32">
+  <div class="card">
+    <div class="card-title">Customer segments</div>
+    <div class="card-desc">KMeans clustering on RFM features (log-scaled)</div>
+    <div id="chartSegments"></div>
+  </div>
+  <div class="card">
+    <div class="card-title">Segment profiles</div>
+    <div class="card-desc">Behavioural averages per segment — sorted by customer value</div>
+    <div class="tbl-wrap"><table class="tbl" id="segTable"></table></div>
+  </div>
+</div>
+
+<div class="grid grid-2 mt">
+  <div class="card">
+    <div class="card-title">Value vs engagement map</div>
+    <div class="card-desc">1,200-customer sample · colour = churn risk (light → dark). Hover for the segment.</div>
+    <div id="chartScatter"></div>
+  </div>
+  <div class="card">
+    <div class="card-title">Revenue by age band</div>
+    <div class="card-desc">Lifetime net revenue of loyalty members</div>
+    <div id="chartAge"></div>
+  </div>
+</div>
+
+<div class="card mt">
+  <div class="card-head">
+    <div>
+      <div class="card-title">Churn watchlist — high-value customers at risk</div>
+      <div class="card-desc">churn risk ≥ 50%, ranked by annualised customer lifetime value</div>
+    </div>
+  </div>
+  <div class="tbl-wrap"><table class="tbl" id="riskTable"></table></div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/customers.js') }}"></script>
+{% endblock %}

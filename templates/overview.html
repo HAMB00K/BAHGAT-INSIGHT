@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="filters">
+  <div class="seg" id="daysSeg">
+    <button data-days="30">30 days</button>
+    <button data-days="90" class="active">90 days</button>
+    <button data-days="365">12 months</button>
+  </div>
+</div>
+
+<div class="grid grid-kpi" id="kpiGrid"></div>
+
+<div class="grid grid-23 mt">
+  <div class="card">
+    <div class="card-head">
+      <div>
+        <div class="card-title">Net revenue trend</div>
+        <div class="card-desc">Daily net revenue with 7-day moving average</div>
+      </div>
+    </div>
+    <div id="chartTrend"></div>
+  </div>
+  <div class="card">
+    <div class="card-title">Revenue by category</div>
+    <div class="card-desc">Share of net revenue in the selected period</div>
+    <div id="chartCat"></div>
+  </div>
+</div>
+
+<div class="grid grid-23 mt">
+  <div class="card">
+    <div class="card-head">
+      <div>
+        <div class="card-title">Store performance</div>
+        <div class="card-desc">Top stores by net revenue</div>
+      </div>
+    </div>
+    <div id="chartStores"></div>
+  </div>
+  <div class="card">
+    <div class="card-head">
+      <div>
+        <div class="card-title">Latest ML alerts</div>
+        <div class="card-desc">Most recent anomalies detected</div>
+      </div>
+      <a class="chip" href="/anomalies"><i data-lucide="arrow-right"></i> All alerts</a>
+    </div>
+    <div class="tbl-wrap"><table class="tbl" id="alertTable"></table></div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/overview.js') }}"></script>
+{% endblock %}

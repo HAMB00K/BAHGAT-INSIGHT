@@ -1,0 +1,366 @@
+{
+  "config": "{\"version\":\"5.66\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU06\",\"type\":2,\"version\":{\"visual\":\"1.8.91\",\"report\":\"2.0.91\",\"page\":\"1.3.91\"}},\"customTheme\":{\"name\":\"BahgatInsightTheme.json\",\"type\":1,\"version\":{\"visual\":\"1.8.67\",\"report\":\"2.0.67\",\"page\":\"1.3.67\"}}},\"activeSectionIndex\":4,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useNewFilterPaneExperience\":true,\"useEnhancedTooltips\":false}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "BahgatInsightTheme.json",
+            "path": "BahgatInsightTheme.json",
+            "type": 202
+          }
+        ],
+        "name": "RegisteredResources",
+        "type": 1
+      }
+    },
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU06",
+            "path": "BaseThemes/CY24SU06.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "Executive Overview",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "sec1",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"tb101\",\"layouts\":[{\"id\":0,\"position\":{\"x\":16,\"y\":10,\"z\":8000,\"width\":1000,\"height\":56}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Executive Overview\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontSize\":\"16pt\"}}]},{\"textRuns\":[{\"value\":\"Al Noor Retail Group · performance at a glance · synthetic demo data\",\"textStyle\":{\"fontSize\":\"10pt\",\"color\":\"#52514E\"}}]}]}}]}}}",
+          "filters": "[]",
+          "height": 56.00,
+          "width": 1000.00,
+          "x": 16.00,
+          "y": 10.00,
+          "z": 8000.00
+        },
+        {
+          "config": "{\"name\":\"v101\",\"layouts\":[{\"id\":0,\"position\":{\"x\":16,\"y\":74,\"z\":0,\"width\":302,\"height\":104}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"_Measures.Net Revenue\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Net Revenue\"},\"Name\":\"_Measures.Net Revenue\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 104.00,
+          "width": 302.00,
+          "x": 16.00,
+          "y": 74.00,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"v102\",\"layouts\":[{\"id\":0,\"position\":{\"x\":330,\"y\":74,\"z\":1000,\"width\":302,\"height\":104}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"_Measures.Orders\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Orders\"},\"Name\":\"_Measures.Orders\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 104.00,
+          "width": 302.00,
+          "x": 330.00,
+          "y": 74.00,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"v103\",\"layouts\":[{\"id\":0,\"position\":{\"x\":644,\"y\":74,\"z\":2000,\"width\":302,\"height\":104}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"_Measures.Avg Order Value\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Avg Order Value\"},\"Name\":\"_Measures.Avg Order Value\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 104.00,
+          "width": 302.00,
+          "x": 644.00,
+          "y": 74.00,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"v104\",\"layouts\":[{\"id\":0,\"position\":{\"x\":958,\"y\":74,\"z\":3000,\"width\":306,\"height\":104}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"_Measures.Margin Rate %\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Margin Rate %\"},\"Name\":\"_Measures.Margin Rate %\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 104.00,
+          "width": 306.00,
+          "x": 958.00,
+          "y": 74.00,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"v105\",\"layouts\":[{\"id\":0,\"position\":{\"x\":16,\"y\":190,\"z\":4000,\"width\":760,\"height\":300}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"DimDate.date\",\"active\":true}],\"Y\":[{\"queryRef\":\"_Measures.Net Revenue\"},{\"queryRef\":\"_Measures.Revenue 7d Avg\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"DimDate\",\"Type\":0},{\"Name\":\"m\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"date\"},\"Name\":\"DimDate.date\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Net Revenue\"},\"Name\":\"_Measures.Net Revenue\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Revenue 7d Avg\"},\"Name\":\"_Measures.Revenue 7d Avg\"}]},\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Net revenue trend (7-day average)'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 300.00,
+          "width": 760.00,
+          "x": 16.00,
+          "y": 190.00,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"v106\",\"layouts\":[{\"id\":0,\"position\":{\"x\":788,\"y\":190,\"z\":5000,\"width\":476,\"height\":300}}],\"singleVisual\":{\"visualType\":\"donutChart\",\"projections\":{\"Category\":[{\"queryRef\":\"DimProduct.category\",\"active\":true}],\"Y\":[{\"queryRef\":\"_Measures.Net Revenue\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"DimProduct\",\"Type\":0},{\"Name\":\"m\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"category\"},\"Name\":\"DimProduct.category\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Net Revenue\"},\"Name\":\"_Measures.Net Revenue\"}]},\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Revenue by category'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 300.00,
+          "width": 476.00,
+          "x": 788.00,
+          "y": 190.00,
+          "z": 5000.00
+        },
+        {
+          "config": "{\"name\":\"v107\",\"layouts\":[{\"id\":0,\"position\":{\"x\":16,\"y\":502,\"z\":6000,\"width\":624,\"height\":202}}],\"singleVisual\":{\"visualType\":\"clusteredBarChart\",\"projections\":{\"Category\":[{\"queryRef\":\"DimStore.store_name\",\"active\":true}],\"Y\":[{\"queryRef\":\"_Measures.Net Revenue\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"DimStore\",\"Type\":0},{\"Name\":\"m\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"store_name\"},\"Name\":\"DimStore.store_name\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Net Revenue\"},\"Name\":\"_Measures.Net Revenue\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Net Revenue\"}}}]},\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Top stores by net revenue'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 202.00,
+          "width": 624.00,
+          "x": 16.00,
+          "y": 502.00,
+          "z": 6000.00
+        },
+        {
+          "config": "{\"name\":\"v108\",\"layouts\":[{\"id\":0,\"position\":{\"x\":652,\"y\":502,\"z\":7000,\"width\":612,\"height\":202}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"DimProduct.category\"},{\"queryRef\":\"_Measures.Net Revenue\"},{\"queryRef\":\"_Measures.Margin Rate %\"},{\"queryRef\":\"_Measures.Return Rate %\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"DimProduct\",\"Type\":0},{\"Name\":\"m\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"category\"},\"Name\":\"DimProduct.category\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Net Revenue\"},\"Name\":\"_Measures.Net Revenue\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Margin Rate %\"},\"Name\":\"_Measures.Margin Rate %\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Return Rate %\"},\"Name\":\"_Measures.Return Rate %\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Net Revenue\"}}}]},\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Category performance'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 202.00,
+          "width": 612.00,
+          "x": 652.00,
+          "y": 502.00,
+          "z": 7000.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Sales Analytics",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "sec2",
+      "ordinal": 1,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"tb201\",\"layouts\":[{\"id\":0,\"position\":{\"x\":16,\"y\":10,\"z\":4000,\"width\":1000,\"height\":56}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Sales Analytics\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontSize\":\"16pt\"}}]},{\"textRuns\":[{\"value\":\"Channel, product and payment performance\",\"textStyle\":{\"fontSize\":\"10pt\",\"color\":\"#52514E\"}}]}]}}]}}}",
+          "filters": "[]",
+          "height": 56.00,
+          "width": 1000.00,
+          "x": 16.00,
+          "y": 10.00,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"v201\",\"layouts\":[{\"id\":0,\"position\":{\"x\":16,\"y\":74,\"z\":0,\"width\":760,\"height\":306}}],\"singleVisual\":{\"visualType\":\"columnChart\",\"projections\":{\"Category\":[{\"queryRef\":\"DimDate.year_month\",\"active\":true}],\"Series\":[{\"queryRef\":\"FactSales.sales_channel\"}],\"Y\":[{\"queryRef\":\"_Measures.Net Revenue\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"DimDate\",\"Type\":0},{\"Name\":\"f\",\"Entity\":\"FactSales\",\"Type\":0},{\"Name\":\"m\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"year_month\"},\"Name\":\"DimDate.year_month\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"sales_channel\"},\"Name\":\"FactSales.sales_channel\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Net Revenue\"},\"Name\":\"_Measures.Net Revenue\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"year_month\"}}}]},\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Monthly net revenue by channel'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 306.00,
+          "width": 760.00,
+          "x": 16.00,
+          "y": 74.00,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"v202\",\"layouts\":[{\"id\":0,\"position\":{\"x\":788,\"y\":74,\"z\":1000,\"width\":476,\"height\":306}}],\"singleVisual\":{\"visualType\":\"donutChart\",\"projections\":{\"Category\":[{\"queryRef\":\"FactSales.payment_method\",\"active\":true}],\"Y\":[{\"queryRef\":\"_Measures.Net Revenue\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"FactSales\",\"Type\":0},{\"Name\":\"m\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"payment_method\"},\"Name\":\"FactSales.payment_method\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Net Revenue\"},\"Name\":\"_Measures.Net Revenue\"}]},\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Payment methods'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 306.00,
+          "width": 476.00,
+          "x": 788.00,
+          "y": 74.00,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"v203\",\"layouts\":[{\"id\":0,\"position\":{\"x\":16,\"y\":392,\"z\":2000,\"width\":760,\"height\":312}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"DimProduct.product_name\"},{\"queryRef\":\"DimProduct.brand\"},{\"queryRef\":\"_Measures.Units Sold\"},{\"queryRef\":\"_Measures.Net Revenue\"},{\"queryRef\":\"_Measures.Gross Margin\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"DimProduct\",\"Type\":0},{\"Name\":\"m\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"product_name\"},\"Name\":\"DimProduct.product_name\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"brand\"},\"Name\":\"DimProduct.brand\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Units Sold\"},\"Name\":\"_Measures.Units Sold\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Net Revenue\"},\"Name\":\"_Measures.Net Revenue\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Gross Margin\"},\"Name\":\"_Measures.Gross Margin\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Net Revenue\"}}}]},\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Top products'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 312.00,
+          "width": 760.00,
+          "x": 16.00,
+          "y": 392.00,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"v204\",\"layouts\":[{\"id\":0,\"position\":{\"x\":788,\"y\":392,\"z\":3000,\"width\":476,\"height\":312}}],\"singleVisual\":{\"visualType\":\"clusteredColumnChart\",\"projections\":{\"Category\":[{\"queryRef\":\"DimDate.year_month\",\"active\":true}],\"Y\":[{\"queryRef\":\"_Measures.Orders\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"DimDate\",\"Type\":0},{\"Name\":\"m\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"year_month\"},\"Name\":\"DimDate.year_month\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Orders\"},\"Name\":\"_Measures.Orders\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"year_month\"}}}]},\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Orders by month'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 312.00,
+          "width": 476.00,
+          "x": 788.00,
+          "y": 392.00,
+          "z": 3000.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Forecast (ML)",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "sec3",
+      "ordinal": 2,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"tb301\",\"layouts\":[{\"id\":0,\"position\":{\"x\":16,\"y\":10,\"z\":3000,\"width\":1000,\"height\":56}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Forecasting\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontSize\":\"16pt\"}}]},{\"textRuns\":[{\"value\":\"90-day revenue forecast · Holt-Winters champion model with 95% interval\",\"textStyle\":{\"fontSize\":\"10pt\",\"color\":\"#52514E\"}}]}]}}]}}}",
+          "filters": "[]",
+          "height": 56.00,
+          "width": 1000.00,
+          "x": 16.00,
+          "y": 10.00,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"v301\",\"layouts\":[{\"id\":0,\"position\":{\"x\":16,\"y\":74,\"z\":0,\"width\":1248,\"height\":380}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"DimDate.date\",\"active\":true}],\"Y\":[{\"queryRef\":\"_Measures.Actual (Forecast Table)\"},{\"queryRef\":\"_Measures.Forecast Revenue\"},{\"queryRef\":\"_Measures.Forecast Lower\"},{\"queryRef\":\"_Measures.Forecast Upper\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"DimDate\",\"Type\":0},{\"Name\":\"m\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"date\"},\"Name\":\"DimDate.date\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Actual (Forecast Table)\"},\"Name\":\"_Measures.Actual (Forecast Table)\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Forecast Revenue\"},\"Name\":\"_Measures.Forecast Revenue\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Forecast Lower\"},\"Name\":\"_Measures.Forecast Lower\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Forecast Upper\"},\"Name\":\"_Measures.Forecast Upper\"}]},\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Actual vs forecast with 95% interval'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 380.00,
+          "width": 1248.00,
+          "x": 16.00,
+          "y": 74.00,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"v302\",\"layouts\":[{\"id\":0,\"position\":{\"x\":16,\"y\":466,\"z\":1000,\"width\":300,\"height\":110}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"_Measures.Forecast Next 30d\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Forecast Next 30d\"},\"Name\":\"_Measures.Forecast Next 30d\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 110.00,
+          "width": 300.00,
+          "x": 16.00,
+          "y": 466.00,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"v303\",\"layouts\":[{\"id\":0,\"position\":{\"x\":328,\"y\":466,\"z\":2000,\"width\":936,\"height\":238}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"MLForecastMetrics.model\"},{\"queryRef\":\"MLForecastMetrics.scope\"},{\"queryRef\":\"MLForecastMetrics.mape\"},{\"queryRef\":\"MLForecastMetrics.rmse\"},{\"queryRef\":\"MLForecastMetrics.is_champion\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"mf\",\"Entity\":\"MLForecastMetrics\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"mf\"}},\"Property\":\"model\"},\"Name\":\"MLForecastMetrics.model\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"mf\"}},\"Property\":\"scope\"},\"Name\":\"MLForecastMetrics.scope\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"mf\"}},\"Property\":\"mape\"},\"Name\":\"MLForecastMetrics.mape\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"mf\"}},\"Property\":\"rmse\"},\"Name\":\"MLForecastMetrics.rmse\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"mf\"}},\"Property\":\"is_champion\"},\"Name\":\"MLForecastMetrics.is_champion\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"mf\"}},\"Property\":\"mape\"}}}]},\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Model tournament (60-day backtest)'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 238.00,
+          "width": 936.00,
+          "x": 328.00,
+          "y": 466.00,
+          "z": 2000.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Anomalies (ML)",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "sec4",
+      "ordinal": 3,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"tb401\",\"layouts\":[{\"id\":0,\"position\":{\"x\":16,\"y\":10,\"z\":5000,\"width\":1000,\"height\":56}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Anomaly Detection\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontSize\":\"16pt\"}}]},{\"textRuns\":[{\"value\":\"ML alerts validated against injected ground-truth incidents\",\"textStyle\":{\"fontSize\":\"10pt\",\"color\":\"#52514E\"}}]}]}}]}}}",
+          "filters": "[]",
+          "height": 56.00,
+          "width": 1000.00,
+          "x": 16.00,
+          "y": 10.00,
+          "z": 5000.00
+        },
+        {
+          "config": "{\"name\":\"v401\",\"layouts\":[{\"id\":0,\"position\":{\"x\":16,\"y\":74,\"z\":0,\"width\":302,\"height\":104}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"_Measures.Anomaly Count\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Anomaly Count\"},\"Name\":\"_Measures.Anomaly Count\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 104.00,
+          "width": 302.00,
+          "x": 16.00,
+          "y": 74.00,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"v402\",\"layouts\":[{\"id\":0,\"position\":{\"x\":330,\"y\":74,\"z\":1000,\"width\":302,\"height\":104}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"_Measures.Critical Anomalies\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Critical Anomalies\"},\"Name\":\"_Measures.Critical Anomalies\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 104.00,
+          "width": 302.00,
+          "x": 330.00,
+          "y": 74.00,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"v403\",\"layouts\":[{\"id\":0,\"position\":{\"x\":644,\"y\":74,\"z\":2000,\"width\":302,\"height\":104}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"_Measures.Detection Recall %\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Detection Recall %\"},\"Name\":\"_Measures.Detection Recall %\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 104.00,
+          "width": 302.00,
+          "x": 644.00,
+          "y": 74.00,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"v404\",\"layouts\":[{\"id\":0,\"position\":{\"x\":16,\"y\":190,\"z\":3000,\"width\":1248,\"height\":212}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"MLAnomalyValidation.label\"},{\"queryRef\":\"MLAnomalyValidation.start\"},{\"queryRef\":\"MLAnomalyValidation.end\"},{\"queryRef\":\"MLAnomalyValidation.stores\"},{\"queryRef\":\"MLAnomalyValidation.detected\"},{\"queryRef\":\"MLAnomalyValidation.methods\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"v\",\"Entity\":\"MLAnomalyValidation\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"label\"},\"Name\":\"MLAnomalyValidation.label\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"start\"},\"Name\":\"MLAnomalyValidation.start\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"end\"},\"Name\":\"MLAnomalyValidation.end\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"stores\"},\"Name\":\"MLAnomalyValidation.stores\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"detected\"},\"Name\":\"MLAnomalyValidation.detected\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"methods\"},\"Name\":\"MLAnomalyValidation.methods\"}]},\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Ground-truth validation - injected incidents vs detections'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 212.00,
+          "width": 1248.00,
+          "x": 16.00,
+          "y": 190.00,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"v405\",\"layouts\":[{\"id\":0,\"position\":{\"x\":16,\"y\":414,\"z\":4000,\"width\":1248,\"height\":290}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"MLAnomalies.date_key\"},{\"queryRef\":\"MLAnomalies.store_id\"},{\"queryRef\":\"MLAnomalies.severity\"},{\"queryRef\":\"MLAnomalies.method\"},{\"queryRef\":\"MLAnomalies.description\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"a\",\"Entity\":\"MLAnomalies\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"date_key\"},\"Name\":\"MLAnomalies.date_key\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"store_id\"},\"Name\":\"MLAnomalies.store_id\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"severity\"},\"Name\":\"MLAnomalies.severity\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"method\"},\"Name\":\"MLAnomalies.method\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"description\"},\"Name\":\"MLAnomalies.description\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"date_key\"}}}]},\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Alert log'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 290.00,
+          "width": 1248.00,
+          "x": 16.00,
+          "y": 414.00,
+          "z": 4000.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Customers (ML)",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "sec5",
+      "ordinal": 4,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"tb501\",\"layouts\":[{\"id\":0,\"position\":{\"x\":16,\"y\":10,\"z\":5000,\"width\":1000,\"height\":56}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Customer Intelligence\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontSize\":\"16pt\"}}]},{\"textRuns\":[{\"value\":\"RFM segmentation, churn risk and customer lifetime value\",\"textStyle\":{\"fontSize\":\"10pt\",\"color\":\"#52514E\"}}]}]}}]}}}",
+          "filters": "[]",
+          "height": 56.00,
+          "width": 1000.00,
+          "x": 16.00,
+          "y": 10.00,
+          "z": 5000.00
+        },
+        {
+          "config": "{\"name\":\"v501\",\"layouts\":[{\"id\":0,\"position\":{\"x\":16,\"y\":74,\"z\":0,\"width\":476,\"height\":290}}],\"singleVisual\":{\"visualType\":\"donutChart\",\"projections\":{\"Category\":[{\"queryRef\":\"MLSegmentProfiles.segment\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(MLSegmentProfiles.customers)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"sp\",\"Entity\":\"MLSegmentProfiles\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"sp\"}},\"Property\":\"segment\"},\"Name\":\"MLSegmentProfiles.segment\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"sp\"}},\"Property\":\"customers\"}},\"Function\":0},\"Name\":\"Sum(MLSegmentProfiles.customers)\"}]},\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Customers by segment'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 290.00,
+          "width": 476.00,
+          "x": 16.00,
+          "y": 74.00,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"v502\",\"layouts\":[{\"id\":0,\"position\":{\"x\":504,\"y\":74,\"z\":1000,\"width\":760,\"height\":290}}],\"singleVisual\":{\"visualType\":\"clusteredBarChart\",\"projections\":{\"Category\":[{\"queryRef\":\"MLSegmentProfiles.segment\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(MLSegmentProfiles.total_revenue)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"sp\",\"Entity\":\"MLSegmentProfiles\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"sp\"}},\"Property\":\"segment\"},\"Name\":\"MLSegmentProfiles.segment\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"sp\"}},\"Property\":\"total_revenue\"}},\"Function\":0},\"Name\":\"Sum(MLSegmentProfiles.total_revenue)\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"sp\"}},\"Property\":\"total_revenue\"}},\"Function\":0}}}]},\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Lifetime revenue by segment'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 290.00,
+          "width": 760.00,
+          "x": 504.00,
+          "y": 74.00,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"v503\",\"layouts\":[{\"id\":0,\"position\":{\"x\":16,\"y\":376,\"z\":2000,\"width\":302,\"height\":104}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"_Measures.Avg CLV\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Avg CLV\"},\"Name\":\"_Measures.Avg CLV\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 104.00,
+          "width": 302.00,
+          "x": 16.00,
+          "y": 376.00,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"v504\",\"layouts\":[{\"id\":0,\"position\":{\"x\":330,\"y\":376,\"z\":3000,\"width\":302,\"height\":104}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"_Measures.High Risk Customers\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"High Risk Customers\"},\"Name\":\"_Measures.High Risk Customers\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 104.00,
+          "width": 302.00,
+          "x": 330.00,
+          "y": 376.00,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"v505\",\"layouts\":[{\"id\":0,\"position\":{\"x\":16,\"y\":492,\"z\":4000,\"width\":1248,\"height\":212}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"MLCustomerSegments.first_name\"},{\"queryRef\":\"MLCustomerSegments.last_name\"},{\"queryRef\":\"MLCustomerSegments.city\"},{\"queryRef\":\"MLCustomerSegments.segment\"},{\"queryRef\":\"MLCustomerSegments.monetary\"},{\"queryRef\":\"MLCustomerSegments.churn_risk\"},{\"queryRef\":\"MLCustomerSegments.clv_annual\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"cs\",\"Entity\":\"MLCustomerSegments\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"cs\"}},\"Property\":\"first_name\"},\"Name\":\"MLCustomerSegments.first_name\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"cs\"}},\"Property\":\"last_name\"},\"Name\":\"MLCustomerSegments.last_name\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"cs\"}},\"Property\":\"city\"},\"Name\":\"MLCustomerSegments.city\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"cs\"}},\"Property\":\"segment\"},\"Name\":\"MLCustomerSegments.segment\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"cs\"}},\"Property\":\"monetary\"},\"Name\":\"MLCustomerSegments.monetary\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"cs\"}},\"Property\":\"churn_risk\"},\"Name\":\"MLCustomerSegments.churn_risk\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"cs\"}},\"Property\":\"clv_annual\"},\"Name\":\"MLCustomerSegments.clv_annual\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"cs\"}},\"Property\":\"clv_annual\"}}}]},\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Churn watchlist - high-value customers at risk'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 212.00,
+          "width": 1248.00,
+          "x": 16.00,
+          "y": 492.00,
+          "z": 4000.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ],
+  "theme": "BahgatInsightTheme.json"
+}

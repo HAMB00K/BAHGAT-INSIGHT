@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="filters">
+  <div class="seg" id="daysSeg">
+    <button data-days="30">30 days</button>
+    <button data-days="90" class="active">90 days</button>
+    <button data-days="365">12 months</button>
+  </div>
+  <select class="select" id="storeSel"><option value="">All stores</option></select>
+  <select class="select" id="catSel"><option value="">All categories</option></select>
+</div>
+
+<div class="grid grid-2">
+  <div class="card">
+    <div class="card-title">Monthly net revenue</div>
+    <div class="card-desc">Full history — company level</div>
+    <div id="chartMonthly"></div>
+  </div>
+  <div class="card">
+    <div class="card-title">Gross margin rate by month</div>
+    <div class="card-desc">Margin ÷ net revenue — watch the Sep 2025 pricing incident</div>
+    <div id="chartMarginRate"></div>
+  </div>
+</div>
+
+<div class="grid grid-2 mt">
+  <div class="card">
+    <div class="card-title">Channel mix</div>
+    <div class="card-desc">In-store vs e-commerce net revenue by month</div>
+    <div id="chartChannel"></div>
+  </div>
+  <div class="card">
+    <div class="card-title">Payment methods</div>
+    <div class="card-desc">Net revenue by payment method (selected period)</div>
+    <div id="chartPayment"></div>
+  </div>
+</div>
+
+<div class="grid grid-23 mt">
+  <div class="card">
+    <div class="card-head">
+      <div>
+        <div class="card-title">Top products</div>
+        <div class="card-desc" id="topDesc">By net revenue in the selected period</div>
+      </div>
+    </div>
+    <div class="tbl-wrap"><table class="tbl" id="prodTable"></table></div>
+  </div>
+  <div class="card">
+    <div class="card-title">E-commerce funnel</div>
+    <div class="card-desc">Online activity in the selected period</div>
+    <div class="grid grid-2" id="webKpis" style="margin-top:10px"></div>
+    <div id="chartWeb"></div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/sales.js') }}"></script>
+{% endblock %}

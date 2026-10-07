@@ -1,0 +1,136 @@
+// ============================================================================
+// Bahgat Insight Platform - DAX measure library
+// Create a dedicated empty table called "_Measures" (Home > Enter Data) and
+// add each measure below to it (Modeling > New measure, paste one at a time).
+// Assumes the model described in POWERBI_BUILD_GUIDE.md (FactSales -> DimDate
+// on date_key, -> DimStore, DimProduct, DimCustomer on their keys).
+// ============================================================================
+
+// ---------------------------------------------------------------- Core sales
+Net Revenue = SUM ( FactSales[net_amount] )
+
+Gross Revenue = SUM ( FactSales[gross_amount] )
+
+Total Discounts = SUM ( FactSales[discount_amount] )
+
+Total Cost = SUM ( FactSales[cost_amount] )
+
+Gross Margin = SUM ( FactSales[margin_amount] )
+
+Margin Rate % = DIVIDE ( [Gross Margin], [Net Revenue] )
+
+Orders = DISTINCTCOUNT ( FactSales[order_id] )
+
+Units Sold = SUM ( FactSales[quantity] )
+
+Avg Order Value = DIVIDE ( [Net Revenue], [Orders] )
+
+Discount Rate % = DIVIDE ( [Total Discounts], [Gross Revenue] )
+
+Active Customers = DISTINCTCOUNT ( FactSales[customer_id] )
+
+Revenue per Customer = DIVIDE ( [Net Revenue], [Active Customers] )
+
+// ---------------------------------------------------------------- Returns
+Refund Amount = SUM ( FactReturns[refund_amount] )
+
+Units Returned = SUM ( FactReturns[qty_returned] )
+
+Return Rate % = DIVIDE ( [Refund Amount], [Net Revenue] )
+
+// ---------------------------------------------------------------- Time intelligence
+// DimDate must be marked as the model's date table (Table tools > Mark as date table,
+// using DimDate[date]).
+
+Revenue LY =
+CALCULATE ( [Net Revenue], SAMEPERIODLASTYEAR ( DimDate[date] ) )
+
+Revenue YoY % =
+DIVIDE ( [Net Revenue] - [Revenue LY], [Revenue LY] )
+
+Revenue MTD =
+TOTALMTD ( [Net Revenue], DimDate[date] )
+
+Revenue YTD =
+TOTALYTD ( [Net Revenue], DimDate[date] )
+
+Revenue Prev 30d =
+CALCULATE (
+    [Net Revenue],
+    DATESINPERIOD ( DimDate[date], MAX ( DimDate[date] ) - 30, -30, DAY )
+)
+
+Revenue 7d Avg =
+AVERAGEX (
+    DATESINPERIOD ( DimDate[date], MAX ( DimDate[date] ), -7, DAY ),
+    CALCULATE ( [Net Revenue] )
+)
+
+// ---------------------------------------------------------------- Marketing
+Marketing Spend = SUM ( FactMarketing[spend_aed] )
+
+Marketing ROI =
+DIVIDE ( [Net Revenue], [Marketing Spend] )
+
+Cost per Click =
+DIVIDE ( [Marketing Spend], SUM ( FactMarketing[clicks] ) )
+
+// ---------------------------------------------------------------- Web / e-commerce
+Sessions = SUM ( FactWebTraffic[sessions] )
+
+Online Orders = SUM ( FactWebTraffic[online_orders] )
+
+Conversion Rate % =
+DIVIDE ( [Online Orders], [Sessions] )
+
+// ---------------------------------------------------------------- ML - forecast
+// MLForecast has columns: date_key, scope, actual, forecast, lo, hi, kind.
+// Relate MLForecast[date_key] -> DimDate[date_key] (many-to-one, single).
+
+Forecast Revenue =
+CALCULATE ( SUM ( MLForecast[forecast] ), MLForecast[scope] = "company" )
+
+Forecast Lower =
+CALCULATE ( SUM ( MLForecast[lo] ), MLForecast[scope] = "company" )
+
+Forecast Upper =
+CALCULATE ( SUM ( MLForecast[hi] ), MLForecast[scope] = "company" )
+
+Actual (Forecast Table) =
+CALCULATE ( SUM ( MLForecast[actual] ), MLForecast[scope] = "company" )
+
+Forecast Next 30d =
+VAR maxActual =
+    CALCULATE ( MAX ( MLForecast[date_key] ), NOT ISBLANK ( MLForecast[actual] ) )
+RETURN
+    CALCULATE (
+        SUM ( MLForecast[forecast] ),
+        MLForecast[scope] = "company",
+        MLForecast[kind] = "forecast",
+        MLForecast[date_key] <= FORMAT ( DATEVALUE ( maxActual ) + 30, "yyyy-MM-dd" )
+    )
+
+// ---------------------------------------------------------------- ML - anomalies
+Anomaly Count = COUNTROWS ( MLAnomalies )
+
+Critical Anomalies =
+CALCULATE ( [Anomaly Count], MLAnomalies[severity] = "Critical" )
+
+Detection Recall % =
+DIVIDE (
+    CALCULATE ( COUNTROWS ( MLAnomalyValidation ), MLAnomalyValidation[detected] = 1 ),
+    COUNTROWS ( MLAnomalyValidation )
+)
+
+// ---------------------------------------------------------------- ML - customers
+Avg Churn Risk = AVERAGE ( MLCustomerSegments[churn_risk] )
+
+High Risk Customers =
+CALCULATE (
+    COUNTROWS ( MLCustomerSegments ),
+    MLCustomerSegments[churn_risk] >= 0.5
+)
+
+Avg CLV = AVERAGE ( MLCustomerSegments[clv_annual] )
+
+Segment Revenue = SUM ( MLCustomerSegments[monetary] )

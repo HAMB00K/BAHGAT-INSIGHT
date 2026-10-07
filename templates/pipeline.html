@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card">
+  <div class="card-title">Automated data pipeline</div>
+  <div class="card-desc">End-to-end journey executed by <code>run_pipeline.py</code> — rerun it anytime to refresh every dashboard</div>
+  <div class="pipeline-flow mt">
+    <div class="flow-step"><div class="ico"><i data-lucide="file-input"></i></div>
+      <div class="t">Ingestion</div><div class="d">9 source extracts (CSV)</div></div>
+    <div class="flow-step"><div class="ico"><i data-lucide="sparkles"></i></div>
+      <div class="t">Data quality</div><div class="d">dedupe · repair · quarantine</div></div>
+    <div class="flow-step"><div class="ico"><i data-lucide="database"></i></div>
+      <div class="t">Warehouse</div><div class="d">star schema · SQLite</div></div>
+    <div class="flow-step"><div class="ico"><i data-lucide="brain-circuit"></i></div>
+      <div class="t">ML models</div><div class="d">forecast · anomaly · RFM</div></div>
+    <div class="flow-step"><div class="ico"><i data-lucide="layout-dashboard"></i></div>
+      <div class="t">Dashboards</div><div class="d">Flask app + Power BI</div></div>
+  </div>
+</div>
+
+<div class="grid grid-3 mt" id="pipeKpis"></div>
+
+<div class="grid grid-2 mt">
+  <div class="card">
+    <div class="card-head">
+      <div>
+        <div class="card-title">Data-quality remediation report</div>
+        <div class="card-desc">Issues found and fixed by the last ETL run</div>
+      </div>
+    </div>
+    <div class="tbl-wrap"><table class="tbl" id="dqTable"></table></div>
+  </div>
+  <div class="card">
+    <div class="card-head">
+      <div>
+        <div class="card-title">Warehouse contents</div>
+        <div class="card-desc">Row counts per table after the last load</div>
+      </div>
+    </div>
+    <div class="tbl-wrap"><table class="tbl" id="tblTable"></table></div>
+  </div>
+</div>
+
+<div class="grid grid-2 mt">
+  <div class="card">
+    <div class="card-title">Pipeline stage timings</div>
+    <div class="card-desc">Duration of each stage in the last run</div>
+    <div class="tbl-wrap"><table class="tbl" id="runTable"></table></div>
+  </div>
+  <div class="card">
+    <div class="card-title">Source extracts</div>
+    <div class="card-desc">Raw files produced by the generator (before cleaning)</div>
+    <div class="tbl-wrap"><table class="tbl" id="fileTable"></table></div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/pipeline.js') }}"></script>
+{% endblock %}

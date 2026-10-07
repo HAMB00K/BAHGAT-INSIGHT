@@ -1,0 +1,35 @@
+{
+  "name": "Bahgat Insight",
+  "dataColors": ["#2A78D6", "#008300", "#E87BA4", "#EDA100", "#1BAF7A", "#EB6834", "#4A3AA7", "#E34948"],
+  "background": "#FCFCFB",
+  "foreground": "#0B0B0B",
+  "tableAccent": "#2A78D6",
+  "good": "#0CA30C",
+  "neutral": "#EDA100",
+  "bad": "#D03B3B",
+  "maximum": "#0D366B",
+  "center": "#3987E5",
+  "minimum": "#CDE2FB",
+  "textClasses": {
+    "title": { "fontFace": "Segoe UI Semibold", "fontSize": 13, "color": "#0B0B0B" },
+    "header": { "fontFace": "Segoe UI Semibold", "fontSize": 11, "color": "#52514E" },
+    "label": { "fontFace": "Segoe UI", "fontSize": 10, "color": "#52514E" },
+    "callout": { "fontFace": "Segoe UI Semibold", "fontSize": 28, "color": "#0B0B0B" }
+  },
+  "visualStyles": {
+    "*": {
+      "*": {
+        "background": [{ "color": { "solid": { "color": "#FCFCFB" } }, "transparency": 0 }],
+        "border": [{ "show": true, "color": { "solid": { "color": "#E1E0D9" } }, "radius": 12 }],
+        "title": [{ "show": true, "fontColor": { "solid": { "color": "#0B0B0B" } }, "fontSize": 12, "fontFamily": "Segoe UI Semibold" }],
+        "outspacePane": [{ "backgroundColor": { "solid": { "color": "#F9F9F7" } } }]
+      }
+    },
+    "page": {
+      "*": {
+        "background": [{ "color": { "solid": { "color": "#F9F9F7" } }, "transparency": 0 }],
+        "outspace": [{ "color": { "solid": { "color": "#F9F9F7" } }, "transparency": 0 }]
+      }
+    }
+  }
+}

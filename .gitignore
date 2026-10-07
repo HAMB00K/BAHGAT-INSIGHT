@@ -1,0 +1,16 @@
+# generated artifacts (recreate with: python run_pipeline.py)
+data/
+logs/
+powerbi/data/
+
+# python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# editors / os
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store

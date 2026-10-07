@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="filters">
+  <select class="select" id="scopeSel"><option value="company">Company (all)</option></select>
+  <span class="chip"><i data-lucide="bot"></i> Champion model: <b id="champName">…</b></span>
+</div>
+
+<div class="grid grid-3" id="fcKpis"></div>
+
+<div class="card mt">
+  <div class="card-head">
+    <div>
+      <div class="card-title">90-day net revenue forecast</div>
+      <div class="card-desc">History (solid) · backtest on holdout (dashed) · forecast with 95% interval (shaded)</div>
+    </div>
+  </div>
+  <div id="chartForecast"></div>
+</div>
+
+<div class="grid grid-2 mt">
+  <div class="card">
+    <div class="card-title">Model tournament — company scope</div>
+    <div class="card-desc">Both models backtested on the last 60 days (holdout)</div>
+    <div class="tbl-wrap"><table class="tbl" id="modelTable"></table></div>
+    <p class="card-note mt">MAPE = mean absolute percentage error on the holdout window. The champion
+    (lowest MAPE) generates the official forecast that feeds procurement and staffing plans.</p>
+  </div>
+  <div class="card">
+    <div class="card-title">Forecast quality by category</div>
+    <div class="card-desc">Holt-Winters MAPE per category — lower is better</div>
+    <div id="chartMape"></div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/forecast.js') }}"></script>
+{% endblock %}

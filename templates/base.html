@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page_title }} · {{ platform }}</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231c5cab'/><text x='50' y='68' font-size='52' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'>B</text></svg>">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+  <script>
+    // apply saved theme before first paint (avoids flash)
+    (function () {
+      var t = localStorage.getItem("bip-theme");
+      if (t === "dark") document.documentElement.setAttribute("data-theme", "dark");
+    })();
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts@4.7.0/dist/apexcharts.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.525.0/dist/umd/lucide.min.js"></script>
+</head>
+<body data-currency="{{ currency }}" data-anchor="{{ anchor }}">
+<div class="shell">
+
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-logo">AB</div>
+      <div>
+        <div class="brand-name">{{ platform }}</div>
+        <div class="brand-sub">Bahgat IT Expert · Dubai</div>
+      </div>
+    </div>
+
+    <div class="nav-section">Analytics</div>
+    <a class="nav-item {{ 'active' if page == 'overview' }}" href="/">
+      <i data-lucide="layout-dashboard"></i> Executive Overview</a>
+    <a class="nav-item {{ 'active' if page == 'sales' }}" href="/sales">
+      <i data-lucide="chart-column"></i> Sales Analytics</a>
+
+    <div class="nav-section">Machine Learning</div>
+    <a class="nav-item {{ 'active' if page == 'forecast' }}" href="/forecast">
+      <i data-lucide="trending-up"></i> Forecasting</a>
+    <a class="nav-item {{ 'active' if page == 'anomalies' }}" href="/anomalies">
+      <i data-lucide="siren"></i> Anomaly Detection</a>
+    <a class="nav-item {{ 'active' if page == 'customers' }}" href="/customers">
+      <i data-lucide="users"></i> Customer Intelligence</a>
+
+    <div class="nav-section">Operations</div>
+    <a class="nav-item {{ 'active' if page == 'pipeline' }}" href="/pipeline">
+      <i data-lucide="workflow"></i> Data Pipeline</a>
+
+    <div class="sidebar-foot">
+      Client: <b>{{ company }}</b><br>
+      Warehouse refresh: {{ anchor }}
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="topbar">
+      <div>
+        <div class="crumb">{{ platform }} / {{ page_title }}</div>
+        <h1>{{ page_title }}</h1>
+      </div>
+      <div class="topbar-right">
+        <span class="chip"><i data-lucide="database"></i> Data as of {{ anchor }}</span>
+        <span class="chip"><i data-lucide="badge-dollar-sign"></i> {{ currency }}</span>
+        <button class="icon-btn" id="themeToggle" title="Toggle dark mode">
+          <i data-lucide="moon"></i>
+        </button>
+      </div>
+    </div>
+
+    {% block content %}{% endblock %}
+
+    <footer class="page-foot">
+      {{ platform }} — engineering internship project at Bahgat IT Expert ·
+      synthetic data, {{ company }} is a fictional client
+    </footer>
+  </main>
+</div>
+
+<script src="{{ url_for('static', filename='js/common.js') }}"></script>
+{% block scripts %}{% endblock %}
+<script>lucide.createIcons();</script>
+</body>
+</html>

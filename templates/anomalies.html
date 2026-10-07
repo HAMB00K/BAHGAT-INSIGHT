@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="grid grid-3" id="anKpis"></div>
+
+<div class="card mt">
+  <div class="card-head">
+    <div>
+      <div class="card-title">Daily revenue with detected anomalies</div>
+      <div class="card-desc">Company net revenue (line) · days flagged by the detectors (points)</div>
+    </div>
+    <div class="seg" id="daysSeg">
+      <button data-days="180">6 months</button>
+      <button data-days="540" class="active">18 months</button>
+      <button data-days="1100">All</button>
+    </div>
+  </div>
+  <div id="chartAnomaly"></div>
+</div>
+
+<div class="grid grid-23 mt">
+  <div class="card">
+    <div class="card-head">
+      <div>
+        <div class="card-title">Alert log</div>
+        <div class="card-desc">Isolation Forest (company) + rolling z-score (store level)</div>
+      </div>
+      <select class="select" id="sevSel">
+        <option value="">All severities</option>
+        <option>Critical</option><option>High</option>
+        <option>Medium</option><option>Low</option>
+      </select>
+    </div>
+    <div class="tbl-wrap"><table class="tbl" id="alertTable"></table></div>
+  </div>
+  <div class="card">
+    <div class="card-title">Detector validation</div>
+    <div class="card-desc">Incidents deliberately injected in the synthetic data vs what the ML found</div>
+    <div class="tbl-wrap"><table class="tbl" id="valTable"></table></div>
+    <p class="card-note mt" id="recallNote"></p>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/anomalies.js') }}"></script>
+{% endblock %}
